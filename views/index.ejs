@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Plymouth-ChatRoom</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Plymouth-ChatRoom</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid" style="margin-top: 60px">
+      <div class="row col-sm-12 col-md-12">
+        <div class="col-sm-3 col-md-3 sidebar">
+          <!--个人信息区-->
+          <div class="col-sm-12">
+            <div class="panel panel-default box-shadow-public">
+              <div class="panel-heading">
+                <h4 class="glyphicon glyphicon-user">&nbsp;Personal information</h4>
+              </div>
+              <div class="panel-body">
+                <div class="col-sm-5">
+                  <img src="<%= useravatar %>" alt="avatar" style="width: 100%;" id="userImage" />
+                </div>
+                <div class="col-sm-7">
+                  <p>Nickname:<span id="username"> <%= username %></span></p>
+                  <!-- <p><a data-toggle="modal" data-target="#changeInfo">修改信息</a></p> -->
+                  <p><a id="exitBtn">Exit</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="panel panel-default box-shadow-public">
+              <div class="panel-heading">
+                <h4 class="glyphicon glyphicon-pushpin">&nbsp;Online users</h4>
+              </div>
+              <div class="panel-body">
+                <ul id="peopleList"></ul>
+              </div>
+              <div class="panel-footer" id="list-count">Currently online:<span></span>people</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-9  col-md-9">
+          <div class="col-sm-12">
+            <div class="panel panel-default box-shadow-public">
+              <div class="panel-heading">
+                <h4 class="glyphicon glyphicon-leaf">&nbsp;Plymouth-ChatRoom</h4>
+              </div>
+              <div class="panel-body">
+                <ul id="MsgList" class="list"></ul>
+              </div>
+              <div class="panel-footer">
+                <div class="infoBox">
+                  <div id="navbar" class="navbar-collapse collapse">
+                  </div>
+                  <div class="infoInput text-right">
+                    <textarea id="msgInput" class="form-control"></textarea>
+                    <br />
+                    <button class="btn btn-info " id="sendBtn">Send</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/javascripts/index.js"></script>
+  </body>
+</html>
